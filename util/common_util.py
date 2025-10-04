@@ -23,3 +23,13 @@ def read_excel_data(sheet_name):
         data.append(tuple([cell.value for cell in row]))
     wb.close()
     return data
+
+def read_csv_data(sheet_name):
+    excel_file = os.path.join(get_parent_framework_path(), "data", "testdata.xlsx")
+    wb = load_workbook(excel_file)
+    ws = wb[sheet_name]
+    data = []
+    for row in ws.iter_rows(min_row=2, max_row=ws.max_row, min_col=1, max_col= ws.max_column):
+        data.append(tuple([cell.value for cell in row]))
+    wb.close()
+    return data
