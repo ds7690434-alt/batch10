@@ -6,9 +6,9 @@ from Pages.basic_action import BasicActions
 
 
 class LoginPage(BasicActions):
-    username_text_field = (By.XPATH, "//input[@name ='username']")
+    username_text_field = (By.XPATH, "//input[@name ='user-name']")
     password_text_field = (By.XPATH, "//input[@name ='password']")
-    login_btn = (By.XPATH, "//button[normalize-space() ='Login']")
+    login_btn = (By.XPATH, "//input[@id='login-button']")
 
     def __init__(self, driver):
         super().__init__(driver)
@@ -23,5 +23,6 @@ class LoginPage(BasicActions):
         self.type_words(self.password_text_field,password)
 
     def click_on_login(self):
+        self.wait_for_object(self.login_btn)
         self.click_me(self.login_btn)
 

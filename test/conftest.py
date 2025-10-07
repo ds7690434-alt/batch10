@@ -9,9 +9,9 @@ driver = None
 
 @pytest.fixture(scope="function")
 def open_browser_test_startup(request):
-    browser = get_data_from_inputs("browser")  #firefox
+    browser = get_data_from_inputs("browser")  #chrome
     global driver
-    basic_action = BasicActions(driver = None)
+    basic_action = BasicActions()
     driver = basic_action.open_my_browser(browser)
     url = get_data_from_inputs("url")
     basic_action.go_to_url(url)
@@ -19,7 +19,3 @@ def open_browser_test_startup(request):
     request.cls.driver = driver
     yield
     basic_action.close_browser()
-
-
-
-

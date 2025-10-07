@@ -60,6 +60,10 @@ class BasicActions:
         element = self.driver.find_element(locator[0], locator[1])
         return element
 
+    def get_web_elements(self, locator):
+        elements = self.driver.find_elements(locator[0], locator[1])
+        return elements
+
     def click_me(self, locator):
         element = self.get_web_element(locator)
         element.click()
@@ -69,7 +73,7 @@ class BasicActions:
         wait.until(EC.presence_of_element_located(locator))
 
     def element_displayed(self, locator, timeout=10):
-        self.wait_for_object(locator)
+        self.wait_for_object(locator, timeout)
         flag = self.get_web_element(locator).is_displayed()
         return flag
 
@@ -83,3 +87,17 @@ class BasicActions:
         element = self.get_web_element(locator)
         select = Select(element)
         select.select_by_visible_text(text)
+
+    def get_text(self, locator):
+        try:
+            element = self.get_web_element(locator)
+            value = element.text
+        except Exception as e:
+            print(f" in get text got expection {e}")
+        return value
+
+    def click_by_javascript(self, locator):
+        element = self.get_web_element(locator)
+        self.driver.execute_script("arguments[0].click();", element)
+
+

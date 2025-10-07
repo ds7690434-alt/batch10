@@ -1,6 +1,7 @@
 {
-  "browser": "firefox",
-  "url": "https://opensource-demo.orangehrmlive.com/web/index.php/auth/login",
-  "username": "Admin",
-  "password": "admin123"
+  "browser": "chrome",
+  "url": "https://www.saucedemo.com/",
+  "username": "standard_user",
+  "password": "secret_sauce",
+  "product_count" : 6
 }
