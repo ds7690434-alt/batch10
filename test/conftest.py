@@ -11,8 +11,9 @@ driver = None
 def open_browser_test_startup(request):
     browser = get_data_from_inputs("browser")  #chrome
     global driver
-    basic_action = BasicActions()
+    basic_action = BasicActions(driver= None)
     driver = basic_action.open_my_browser(browser)
+    print("driver", driver)
     url = get_data_from_inputs("url")
     basic_action.go_to_url(url)
     basic_action.maximize_browser_window()
