@@ -1,11 +1,7 @@
 import time
 
 import pytest
-
-from Pages.admin_page import AdminPage
 from Pages.cart_page import CartPage
-from Pages.dashboared_page import DashboardPage
-from Pages.home_page import HomePage
 from Pages.login_page import LoginPage
 from Pages.product_page import ProductPage
 from util.common_util import *
@@ -40,3 +36,4 @@ class TestProductPage:
         productPage = ProductPage(self.driver)
         product_count  = productPage.count_product()
         assert  product_count == get_data_from_inputs("product_count")
+

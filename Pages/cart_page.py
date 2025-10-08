@@ -23,7 +23,7 @@ class CartPage(BasicActions):
         value  = self.get_text(self.price_text_field)
         return value
 
-    def click_on_checkout(self):
+    def click_on_checkout_btn(self):
         self.wait_for_object(self.checkout_btn)
         self.click_me(self.checkout_btn)
 
