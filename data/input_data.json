@@ -3,5 +3,6 @@
   "url": "https://www.saucedemo.com/",
   "username": "standard_user",
   "password": "secret_sauce",
-  "product_count" : 6
+  "product_count" : 6,
+  "first_name" : "pintu"
 }
